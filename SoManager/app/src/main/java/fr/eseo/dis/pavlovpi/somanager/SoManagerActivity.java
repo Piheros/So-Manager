@@ -20,7 +20,7 @@ public class SoManagerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_filmography);
+        setContentView(R.layout.activity_so_manager);
         this.NEW_CARD_COUNTER = 0;
         RecyclerView recycler = (RecyclerView)findViewById(R.id.filmographyList);
         recycler.setHasFixedSize(true);
@@ -36,7 +36,6 @@ public class SoManagerActivity extends AppCompatActivity {
         soManagerAdapter.setFilms(SoManagerDatabase.getDatabase(this).filmDao().findAllFilms());
         soManagerAdapter.notifyDataSetChanged();
     }
-
 
     public void clickFilmCard(Film film) {
         Intent intent = new Intent(this, SoManagerDetailsActivity.class);

@@ -33,11 +33,13 @@ public class SoManagerDetailsActivity extends AppCompatActivity{
     private TextView resume;
     private TextView note;
     private Button btnDetails;
+    private Button btnEvaluation;
+    private Button btnPdf;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_film_details);
+        setContentView(R.layout.activity_details);
         int clickedFilm = 0;
         Intent intent = getIntent();
         Bundle data = intent.getExtras();
@@ -50,9 +52,13 @@ public class SoManagerDetailsActivity extends AppCompatActivity{
 
         note =  findViewById(R.id.tv_details_note);
         btnDetails =  findViewById(R.id.button_details);
+        btnEvaluation = findViewById(R.id.button_evaluation);
+        btnPdf = findViewById(R.id.button_pdf);
+
         titre.setText(film.getTitre());
         genre.setText(film.getGenre());
         resume.setText(film.getResume());
+
         btnDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +67,23 @@ public class SoManagerDetailsActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+
+        btnEvaluation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              Intent myIntent = new Intent(SoManagerDetailsActivity.this, SoManagerEvaluationActivity.class);
+              startActivity(myIntent);
+            }
+        });
+
+        btnPdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(SoManagerDetailsActivity.this, SoManagerPdfActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
         titre.setText(film.getTitre());
         genre.setText(film.getGenre());
         resume.setText(film.getResume());
@@ -71,8 +94,11 @@ public class SoManagerDetailsActivity extends AppCompatActivity{
         recycler.setLayoutManager(llm);
         soManagerRoleAdapter = new SoManagerRoleAdapter(this,clickedFilm);
         recycler.setAdapter(soManagerRoleAdapter);
+        btnPdf.setVisibility(View.VISIBLE);
         loadFilmDetails();
     }
+
+
 
     private void loadFilmDetails() {
     /*
@@ -186,14 +212,17 @@ public class SoManagerDetailsActivity extends AppCompatActivity{
         annee.setText(String.valueOf(film.getAnnee()) + " " + pays.getNom());
         realisateur.setText(getString(R.string.realisateur_label) + reali.getPrenom() + " " + reali.getNom());
         DecimalFormat df = new DecimalFormat("0.0");
-        note.setText(df.format(avgNote) + getString(R.string.average_note_from) + nbNotes + getString(R.string.note_nbr_users));
+        note.setText("Overall average rating " + df.format(avgNote) + getString(R.string.average_note_from) + nbNotes + getString(R.string.note_nbr_users));
         soManagerRoleAdapter.setRoles(roles);
         soManagerRoleAdapter.notifyDataSetChanged();
         if (avgNote == 0) {
             btnDetails.setVisibility(View.GONE);
+            btnEvaluation.setVisibility(View.GONE);
         } else {
             btnDetails.setVisibility(View.VISIBLE);
+            btnEvaluation.setVisibility(View.VISIBLE);
         }
     }
+
 
 }

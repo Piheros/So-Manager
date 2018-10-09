@@ -40,7 +40,7 @@ public class SoManagerAdapter extends RecyclerView.Adapter<SoManagerAdapter.Film
 
     @Override
     public FilmographyViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View filmView = LayoutInflater.from(parent.getContext()).inflate(R.layout.filmography_card_layout, parent, false);
+        View filmView = LayoutInflater.from(parent.getContext()).inflate(R.layout.so_manager_card_layout, parent, false);
         CardView filmCardView = (CardView)filmView;
         filmCardView.setCardElevation(3 * SoManagerActivity.NEW_CARD_COUNTER++);
         return new FilmographyViewHolder(filmView);

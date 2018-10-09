@@ -19,7 +19,7 @@ public class SoManagerNotationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_film_notation);
+        setContentView(R.layout.activity_notation);
         Intent intent = getIntent();
         Bundle data = intent.getExtras();
         film = (Film) data.getParcelable(SoManagerActivity.FILM_EXTRA);

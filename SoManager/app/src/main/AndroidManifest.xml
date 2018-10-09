@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".SoManagerDetailsActivity"></activity>
         <activity android:name=".SoManagerNotationActivity"></activity>
+        <activity android:name=".SoManagerEvaluationActivity"></activity>
+        <activity android:name=".SoManagerPdfActivity"></activity>
     </application>
 
 </manifest>
