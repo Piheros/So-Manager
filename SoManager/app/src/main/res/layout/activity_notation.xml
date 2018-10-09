@@ -6,7 +6,7 @@
     android:paddingRight="6dp"
     android:paddingTop="6dp"
     android:paddingBottom="6dp"
-    android:background="@color/colorPrimaryLight"
+    android:background="@color/colorPrimaryText"
     >
     <android.support.v7.widget.RecyclerView
         android:id="@+id/notationList"
