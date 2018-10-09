@@ -212,7 +212,7 @@ public class SoManagerDetailsActivity extends AppCompatActivity{
         annee.setText(String.valueOf(film.getAnnee()) + " " + pays.getNom());
         realisateur.setText(getString(R.string.realisateur_label) + reali.getPrenom() + " " + reali.getNom());
         DecimalFormat df = new DecimalFormat("0.0");
-        note.setText("Overall average rating " + df.format(avgNote) + getString(R.string.average_note_from) + nbNotes + getString(R.string.note_nbr_users));
+        note.setText("Overall average rating " + df.format(avgNote) + "/10"+ getString(R.string.average_note_from) + nbNotes + getString(R.string.note_nbr_users));
         soManagerRoleAdapter.setRoles(roles);
         soManagerRoleAdapter.notifyDataSetChanged();
         if (avgNote == 0) {
