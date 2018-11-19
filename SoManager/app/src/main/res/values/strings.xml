@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">So Manager</string>
+    <string name="realisateur_label">Referring:\u0020</string>
+    <string name="average_note_from">\u0020from\u0020</string>
+    <string name="note_nbr_users">\u0020users</string>
+    <string name="visitor">Visitor</string>
+    <string name="connection">Connection</string>
+    <string name="eseo_logo">ESEO_Logo</string>
+    <string name="membres_du_projet">Membres du projet</string>
+</resources>

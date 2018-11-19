@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimaryText"
+    tools:context=".ProjectsActivity"
+    android:id="@+id/detailList">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="4dp"
+            >
+            <TextView
+                android:id="@+id/detail_project_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:padding="10dp"
+                android:minLines="1"
+                android:maxLines="2"
+                android:layout_margin="10dp"
+                android:textAlignment="center"
+                android:background="@drawable/less_corner_rounded"
+                android:textColor="@color/colorPrimaryText"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/detail_project_supervisor_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:paddingLeft="10dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:textColor="@color/colorPrimaryLight"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textAlignment="textStart"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_membres_jury"
+                android:textSize="16sp"
+                android:text="@string/membres_du_projet"
+                android:padding="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:textAlignment="center"
+                android:background="@drawable/less_corner_rounded"
+                android:textColor="@color/colorPrimaryText"/>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/project_member_name_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="@color/colorPrimaryLight"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp" />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_poster"
+                android:textSize="16sp"
+                android:text="Poster"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:background="@drawable/less_corner_rounded"
+                android:textColor="@color/colorPrimaryText"/>
+
+            <ImageView
+                android:id="@+id/poster_project_view"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/button_commentaire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/colorPrimaryLight"
+                android:layout_alignParentLeft="true"
+                android:text="  Mettre un commentaire"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_baseline_speaker_notes_24px" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_resume"
+                android:textSize="16sp"
+                android:text="Résumé"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:textAlignment="center"
+                android:background="@drawable/less_corner_rounded"
+                android:textColor="@color/colorPrimaryText"/>
+
+            <TextView
+                android:id="@+id/jury_project_description_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/colorPrimaryLight"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/tv_details_resume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:textColor="@color/colorPrimaryLight"
+                android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_details_note"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="2"
+                    android:layout_gravity="center"
+                    android:textColor="@color/colorPrimaryLight"
+                    android:padding="2dp"/>
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            >
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_details"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/colorPrimaryText"
+                    android:background="@drawable/less_corner_rounded"
+                    android:text="notes"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_evaluation"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorPrimaryText"
+                android:background="@drawable/less_corner_rounded"
+                android:text="Evaluer"/>
+        </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</ScrollView>
+
+</RelativeLayout>
